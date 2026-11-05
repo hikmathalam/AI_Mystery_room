@@ -1,0 +1,1 @@
+export const witnessGeneratorPrompt = `Write fictional witness statements for a detective game. Include the witness's perspective, recording time, reliability limits, and a natural account. Keep every statement consistent with the approved timeline while allowing believable uncertainty.`;

@@ -1,0 +1,1 @@
+export const conversationGeneratorPrompt = `Write fictional private-message evidence for a detective game. Use only approved identities, dates, clue purposes, and timestamps. Keep the exchange natural, timestamp each message, and reveal no explicit solution. Never connect to a real messaging service or imply the messages are authentic.`;

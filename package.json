@@ -1,0 +1,34 @@
+{
+  "name": "ai-mystery-room",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run build --workspace shared && concurrently -k -n server,client -c yellow,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "npm --workspace client run dev",
+    "dev:server": "npm --workspace server run dev",
+    "build": "npm run build --workspace shared && npm run build --workspace server && npm run build --workspace client",
+    "start": "npm --workspace server run start",
+    "typecheck": "npm run build --workspace shared && npm run typecheck --workspace server && npm run typecheck --workspace client",
+    "lint": "biome lint client/src server/src shared/src tests",
+    "test": "vitest run --configLoader runner",
+    "test:watch": "vitest --configLoader runner",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.4",
+    "@playwright/test": "^1.64.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "concurrently": "^9.2.5",
+    "jsdom": "^29.1.1",
+    "supertest": "^7.3.1",
+    "typescript": "^5.9.2",
+    "vitest": "^5.1.0"
+  }
+}
